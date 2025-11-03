@@ -3,16 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Dashboard</title>
+  <title>Movies Database</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <div class="glass-card">
-      <h1>🌦️ Weather Dashboard</h1>
-      <input id="city" type="text" placeholder="Enter city name..." />
-      <button onclick="getWeather()">Search</button>
-      <div id="result"></div>
+      <h1>� Movies Database</h1>
+      <div class="search-box">
+        <input id="movie" type="text" placeholder="Search for a movie..." />
+        <button onclick="searchMovies()">Search</button>
+      </div>
+      <div class="filters">
+        <select id="genre">
+          <option value="">All Genres</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+          <option value="horror">Horror</option>
+          <option value="sci-fi">Sci-Fi</option>
+        </select>
+        <select id="year">
+          <option value="">All Years</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+        </select>
+      </div>
+      <div id="movies-grid"></div>
     </div>
   </div>
   <script src="script.js"></script>
