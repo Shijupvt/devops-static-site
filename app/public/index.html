@@ -3,35 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movies Database</title>
+  <title>PetPals – Adopt Your Companion</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <div class="glass-card">
-      <h1>Movies DB</h1>
+      <h1>🐾 PetPals Adoption Center</h1>
+      <p>Find your new furry friend today!</p>
+
       <div class="search-box">
-        <input id="movie" type="text" placeholder="Search for a movie..." />
-        <button onclick="searchMovies()">Search</button>
+        <input id="pet" type="text" placeholder="Search by name or breed..." />
+        <button onclick="searchPets()">Search</button>
       </div>
+
       <div class="filters">
-        <select id="genre">
-          <option value="">Genre</option>
-          <option value="action">Action</option>
-          <option value="comedy">Comedy</option>
-          <option value="drama">Drama</option>
-          <option value="horror">Horror</option>
-          <option value="sci-fi">Sci-Fi</option>
+        <select id="type">
+          <option value="">All Types</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="bird">Bird</option>
         </select>
-        <select id="year">
-          <option value="">All Years</option>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
+        <select id="age">
+          <option value="">All Ages</option>
+          <option value="puppy">Puppy/Kitten</option>
+          <option value="adult">Adult</option>
+          <option value="senior">Senior</option>
         </select>
       </div>
-      <div id="movies-grid"></div>
+
+      <div id="pets-grid"></div>
     </div>
   </div>
   <script src="script.js"></script>

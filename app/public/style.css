@@ -1,8 +1,7 @@
 body {
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
   font-family: 'Poppins', sans-serif;
-  color: #fff;
-  min-height: 100vh;
+  color: #333;
   margin: 0;
   padding: 20px;
 }
@@ -13,41 +12,22 @@ body {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   padding: 40px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.search-box {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-input, select {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 16px;
-}
-
-input {
-  flex-grow: 1;
-}
-
-select {
-  min-width: 120px;
+h1 {
+  color: #ff6f61;
+  text-align: center;
 }
 
 button {
   padding: 12px 24px;
   border: none;
-  background: #e50914;
+  background: #ff6f61;
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -56,57 +36,52 @@ button {
 }
 
 button:hover {
-  background: #f40612;
+  background: #e65a50;
 }
 
-.filters {
+.filters, .search-box {
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-#movies-grid {
+input, select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+#pets-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
+  gap: 20px;
 }
 
-.movie-card {
-  background: rgba(255, 255, 255, 0.1);
+.pet-card {
+  background: white;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
-.movie-card:hover {
+.pet-card:hover {
   transform: translateY(-5px);
 }
 
-.movie-card img {
+.pet-card img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
 }
 
-.movie-info {
+.pet-info {
   padding: 20px;
 }
 
-.movie-info h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-}
-
-.rating, .genre, .director {
-  margin: 5px 0;
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.description {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #999;
-  line-height: 1.5;
+.pet-info h3 {
+  margin: 0;
+  color: #ff6f61;
 }

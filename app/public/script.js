@@ -1,66 +1,64 @@
-// Static movie data (since this is a static website)
-const movies = [
+const pets = [
   {
-    title: "Inception",
-    year: "2024",
-    genre: "sci-fi",
-    rating: "9.0",
-    director: "Christopher Nolan",
-    image: "https://via.placeholder.com/200x300",
-    description: "A mind-bending sci-fi thriller about dreams within dreams."
+    name: "Buddy",
+    type: "dog",
+    age: "puppy",
+    breed: "Golden Retriever",
+    location: "Chennai",
+    image: "https://place-puppy.com/300x300",
+    description: "A friendly and playful puppy who loves people."
   },
   {
-    title: "The Comedy Club",
-    year: "2025",
-    genre: "comedy",
-    rating: "8.5",
-    director: "Jane Smith",
-    image: "https://via.placeholder.com/200x300",
-    description: "A hilarious take on modern stand-up comedy culture."
+    name: "Luna",
+    type: "cat",
+    age: "adult",
+    breed: "Siamese",
+    location: "Bangalore",
+    image: "https://placekitten.com/300/300",
+    description: "A gentle and affectionate cat who enjoys quiet spaces."
   },
   {
-    title: "Dark Shadows",
-    year: "2023",
-    genre: "horror",
-    rating: "7.8",
-    director: "James Wilson",
-    image: "https://via.placeholder.com/200x300",
-    description: "A spine-chilling horror story set in an abandoned mansion."
+    name: "Coco",
+    type: "bird",
+    age: "senior",
+    breed: "Parrot",
+    location: "Hyderabad",
+    image: "https://placebear.com/300/300",
+    description: "A chatty parrot who loves attention and sunflower seeds."
   }
 ];
 
-function searchMovies() {
-  const searchTerm = document.getElementById("movie").value.toLowerCase().trim();
-  const genre = document.getElementById("genre").value;
-  const year = document.getElementById("year").value;
-  const moviesGrid = document.getElementById("movies-grid");
+function searchPets() {
+  const searchTerm = document.getElementById("pet").value.toLowerCase().trim();
+  const type = document.getElementById("type").value;
+  const age = document.getElementById("age").value;
+  const petsGrid = document.getElementById("pets-grid");
 
-  const filteredMovies = movies.filter(movie => {
-    const matchesSearch = movie.title.toLowerCase().includes(searchTerm) || 
-                         movie.director.toLowerCase().includes(searchTerm);
-    const matchesGenre = !genre || movie.genre === genre;
-    const matchesYear = !year || movie.year === year;
-    return matchesSearch && matchesGenre && matchesYear;
+  const filteredPets = pets.filter(pet => {
+    const matchesSearch = pet.name.toLowerCase().includes(searchTerm) ||
+                          pet.breed.toLowerCase().includes(searchTerm);
+    const matchesType = !type || pet.type === type;
+    const matchesAge = !age || pet.age === age;
+    return matchesSearch && matchesType && matchesAge;
   });
 
-  if (filteredMovies.length === 0) {
-    moviesGrid.innerHTML = "<p>No movies found matching your criteria.</p>";
+  if (filteredPets.length === 0) {
+    petsGrid.innerHTML = "<p>No pets found matching your criteria.</p>";
     return;
   }
 
-  moviesGrid.innerHTML = filteredMovies.map(movie => `
-    <div class="movie-card">
-      <img src="${movie.image}" alt="${movie.title}" />
-      <div class="movie-info">
-        <h3>${movie.title} (${movie.year})</h3>
-        <p class="rating">⭐ ${movie.rating}</p>
-        <p class="genre">� ${movie.genre.charAt(0).toUpperCase() + movie.genre.slice(1)}</p>
-        <p class="director">🎬 ${movie.director}</p>
-        <p class="description">${movie.description}</p>
+  petsGrid.innerHTML = filteredPets.map(pet => `
+    <div class="pet-card">
+      <img src="${pet.image}" alt="${pet.name}" />
+      <div class="pet-info">
+        <h3>${pet.name} 🐾</h3>
+        <p><strong>Breed:</strong> ${pet.breed}</p>
+        <p><strong>Location:</strong> ${pet.location}</p>
+        <p><strong>Age:</strong> ${pet.age.charAt(0).toUpperCase() + pet.age.slice(1)}</p>
+        <p>${pet.description}</p>
       </div>
     </div>
   `).join('');
 }
 
-// Load all movies when the page loads
-window.onload = searchMovies;
+window.onload = searchPets;
